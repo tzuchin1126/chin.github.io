@@ -1,0 +1,172 @@
+// out: ./css/
+
+@vw:3.75vw;
+@color:#fb7299;
+
+// 頭部 固定
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: (84 / @vw);
+    background-color: rgb(255, 255, 255);
+
+    //top
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        height: (44 / 3.75vw);
+        padding-left: (18 / @vw);
+        padding-right: (12 / 3.75vw);
+
+        .left {
+            .icon-bilibili {
+                font-size:(28 / @vw) ;
+                color: @color;
+            }
+        }
+
+        .right {
+            display: flex;
+            .icon-search {
+                font-size: (22 / @vw);
+                color: #ccc;
+            }
+
+            .icon-icon_bilibili-circle {
+                font-size: (24 / @vw);
+                color: #ccc;
+            }
+
+            .login {
+                width: (24 / @vw);
+                height: (24 / @vw);
+                margin-left: (24 / @vw);
+            }
+
+            .download img {
+                width: (72 / @vw);
+                height: (24 / @vw);
+                margin-left: ( 24 / @vw);
+            }
+        }
+    }
+
+    //bottom
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        height: (40 / 3.75vw);
+        border-bottom:1px solid #eee ;
+        .more {
+            a {
+                display: block;
+                width: (40 / @vw);
+                height: (40 / @vw);
+                text-align: center;
+                line-height: (40 / @vw);
+                // icon有默認大小,寫給他爹不能生效
+                // font-size: (22 /@vw);
+                color: #ccc;
+                .icon-arrow-down {
+                    font-size: (22 / @vw);
+                }
+            }
+        }
+
+        .tab{
+            ul{
+                display: flex;
+                li {
+                    padding: 0 (16 / @vw);
+                    a {
+                        display: block;
+                        height: (40 / @vw);
+                        line-height: (38 / @vw);
+                        font-size: (14 / @vw);
+                        color: #000;
+                        &.current {
+                            color: @color;
+                            border-bottom: 2px solid @color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+//tab 影片區域
+.video_content {
+    // 脫標 ,要讓它掉下來
+    padding:(84 / @vw) (5 / @vw) 0;
+    .video_list {
+        display: flex;
+        flex-wrap: wrap;
+        a {
+            width: 50%;
+            padding: (8 / @vw) (5 / @vw);
+            // background-color: pink;
+            font-size: (12 / @vw);
+            color: #000;
+            img {
+                width: (172.55/@vw);
+                height: (97.05 / @vw);
+                // 圖與字的間距
+                margin-bottom: (5 / @vw);
+            }
+
+            .pic {
+                position: relative;
+                .count{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: (7 / @vw);
+                    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0));
+                    color: #fff;
+                    i {
+                        vertical-align: bottom;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 底部下載app(固定定位)
+.openapp {
+    position: fixed;
+    left: (12 / @vw);
+    bottom: (20 / @vw);
+
+    width: (351 / @vw);
+    height: (36.879 / @vw);
+    background-color: @color;
+    color: #fff;
+    border-radius: (25 / @vw);
+    justify-content: center;
+
+    i {
+        margin-left: (55 / @vw);
+        margin-right: (10 / @vw);
+        line-height: ( 35/ @vw);    
+    }
+    span  {
+        line-height: ( 20 / @vw); 
+        font-size: (14 / @vw);
+        font-weight: 500;
+        a {
+            color: #fff;
+        }
+    }
+}
